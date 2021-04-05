@@ -1,5 +1,5 @@
 import { Component, OnInit, Output,EventEmitter } from '@angular/core';
-import {manaCost,set,playerClass,format} from '../constant/filter-options.constant';
+import {manaCost,set,playerClass} from '../constant/filter-options.constant';
 import { optionsList } from '../../interface/options-filter.interface';
 
 @Component({
@@ -9,12 +9,10 @@ import { optionsList } from '../../interface/options-filter.interface';
 })
 export class FilterComponent implements OnInit {
   selectedManaCost?:string;
-  selectedFormat?:string;
   selectedPlayerClass?:string;
   selectedSet?:string;
   manaCostList:Array<options>;
   setList:Array<options>;
-  formatList:Array<options>;
   playerClassList:Array<options>;
   @Output()
   filterEvent = new EventEmitter<optionsList>();
@@ -23,7 +21,6 @@ export class FilterComponent implements OnInit {
     this.manaCostList = manaCost;
     this.setList = set;
     this.playerClassList = playerClass;
-    this.formatList = format;
   }
 
   ngOnInit(): void {
@@ -31,9 +28,8 @@ export class FilterComponent implements OnInit {
   }
 
   onSubmit() {
-    
-    console.log(this.selectedManaCost + " " + this.selectedFormat+ " "+this.selectedPlayerClass+ " "+this.selectedSet)
-    const optList: optionsList = {manaCost : this.selectedManaCost,format : this.selectedFormat,playerClass : this.selectedPlayerClass,set : this.selectedSet};
+    console.log(this.selectedManaCost + " " + " "+this.selectedPlayerClass+ " "+this.selectedSet)
+    const optList: optionsList = {manaCost : this.selectedManaCost as string ,playerClass : this.selectedPlayerClass as string ,set : this.selectedSet as string};
     this.filterEvent.emit(optList);
   }
 

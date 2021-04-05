@@ -16,3 +16,8 @@ export interface cardHs{cardId:string,
     flavor:string,
     text:string,
 }
+
+export interface setHs {
+    name:string,
+    cards:Array<cardHs>
+}

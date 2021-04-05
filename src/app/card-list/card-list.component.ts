@@ -1,5 +1,5 @@
 import { Component , OnInit} from '@angular/core';
-import { cardHs } from '../../interface/card-hs.interface';
+import { cardHs,setHs } from '../../interface/card-hs.interface';
 import { optionsList } from '../../interface/options-filter.interface';
 import { ApiService } from './../api.service';
 
@@ -16,15 +16,27 @@ export class CardListComponent implements OnInit {
 	ngOnInit(): void {
 
 	}
-
-	isNotHero(card:cardHs){
-		return card.type != "Hero"
-	}
 	
   getUrl(options:optionsList) {
-    this.hearthstone.getInfo().then((data)=> {this.images = data.filter(this.isNotHero))
-    console.log(options + "test");
+    this.hearthstone.getInfo(options.playerClass).then((data)=>  {
+      /*for (const set of data) {
+        console.log(set.name);
+        if (set.name == options.set) {
+          for(const card of set.cards) {
+            if (Number(card.cost) == Number(options.manaCost) && card.playerClass == options.playerClass) {
+              this.images.push(card);
+            }
+          }
+        }
+      }*/
+      this.images = data.filter(function(card) {return Number(card.cost) == Number(options.manaCost) && card.cardSet == options.set;})
+    })
+    console.log(this.images);
     
   }
+
+  isNotHero(card:cardHs){
+		return card.type != "hero";
+	}
   
 }
