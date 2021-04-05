@@ -24,8 +24,7 @@ fieldset{
   background-image: url("set.jpg");
   background-repeat: no-repeat;
 }
-
-h3{
+mat-option{
   margin-top: 30px;
   font-size: 30px;
   font-family: fantasy;
@@ -34,7 +33,7 @@ h3{
   color: #D5D5D5;
 }
 
-select{
+mat-select{
   margin-bottom: 30px;
 }
 
