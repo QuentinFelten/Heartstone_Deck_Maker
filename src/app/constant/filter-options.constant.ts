@@ -24,7 +24,7 @@ export const playerClass = [
 ];
 
 export const set = [
-    {name : 'Basic',value : 'Basic'},
+    {name : 'Vanilla',value : 'Vanilla'},
     {name : 'Classic',value : 'Classic'},
     {name : 'Blackrock Mountain',value : 'Blackrock Mountain'},
     {name : 'Curse of Naxxramas',value : 'Curse of Naxxramas'},

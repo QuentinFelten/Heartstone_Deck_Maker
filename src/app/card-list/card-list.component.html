@@ -1,8 +1,11 @@
-
-<app-filter (filterEvent) = "getUrl($event)"></app-filter>
-
-<img *ngFor="let card of images" src={{card.img}} >
-
-
+<title>
+    Hearthstone Card Collection
+</title>
+<div>
+    <app-filter (filterEvent) = "getUrl($event)"></app-filter>
+</div>
+<div>
+    <img *ngFor="let card of images" src={{card.img}} >
+</div>
 
 <router-outlet></router-outlet>
