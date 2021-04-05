@@ -19,14 +19,31 @@ export class CardListComponent implements OnInit {
 	
   getUrl(options:optionsList) {
     this.hearthstone.getInfo(options.playerClass).then((data)=>  {
-      if (Number(options.manaCost) < 7) {
-        this.images = data.filter(function(card) {return Number(card.cost) == Number(options.manaCost) && card.cardSet == options.set;})
+      if (options.manaCost == null && options.set == null) {
+        this.images = data.filter(this.isNotHero);
       }
-      else {
-        this.images = data.filter(function(card) {return Number(card.cost) >= Number(options.manaCost) && card.cardSet == options.set;})
+      else if (options.manaCost == null && options.set != null) {
+        this.images = data.filter(function(card){return card.cardSet == options.set;})
       }
+      else if (options.manaCost != null && options.set == null) {
+        if (Number(options.manaCost) < 7) {
+          this.images = data.filter(function(card) {return Number(card.cost) == Number(options.manaCost)})
+        }
+        else {
+          this.images = data.filter(function(card) {return Number(card.cost) >= Number(options.manaCost)})
+        }
+      }
+      if  (options.manaCost != null && options.set != null){
+        if (Number(options.manaCost) < 7) {
+          this.images = data.filter(function(card) {return Number(card.cost) == Number(options.manaCost) && card.cardSet == options.set;})
+        }
+        else {
+          this.images = data.filter(function(card) {return Number(card.cost) >= Number(options.manaCost) && card.cardSet == options.set;})
+        }
+      }
+      console.log(this.images);
     })
-    console.log(this.images);
+    
     
   }
 
