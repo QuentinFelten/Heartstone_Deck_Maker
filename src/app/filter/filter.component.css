@@ -1,0 +1,49 @@
+body{
+  max-width: 960px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+fieldset{
+    height: 150px;
+    text-align: center;
+    border-color: #000000;
+}
+
+.mana-selection{
+  background-image: url("mana.jpg");
+  background-repeat: no-repeat;
+}
+
+.class-selection{
+  background-image: url("classes.jpg");
+  background-repeat: no-repeat;
+}
+
+.set-selection{
+  background-image: url("set.jpg");
+  background-repeat: no-repeat;
+}
+
+mat-select{
+  margin-bottom: 30px;
+  max-width: 350px;
+  background-color: #FFFFFF;
+}
+
+.buttons{
+  text-align: center;
+}
+
+button{
+    background-color: #FFFFFF;
+    margin-top: 15px;
+}
+
+h3{
+    margin-top: 30px;
+    font-size: 30px;
+    text-shadow: 3px 3px #000000, -1px 1px #272A2C, 1px -1px #272A2C, -1px -1px #272A2C;
+    color: #D5D5D5;
+    font-weight: bold;
+  }

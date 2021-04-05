@@ -1,5 +1,7 @@
+<body>
 <div class="col-md-8">
-    <fieldset>
+    <fieldset class="mana-selection">
+      <h3>Mana Cost</h3>
         <mat-select [(ngModel)]="selectedManaCost" name="set">
             <mat-option *ngFor="let manaCost of manaCostList" [value]="manaCost.value">
               {{manaCost.name}}
@@ -8,7 +10,8 @@
     </fieldset>
 </div>
 <div class="col-md-8">
-    <fieldset>
+    <fieldset class="class-selection">
+      <h3>Class</h3>
         <mat-select [(ngModel)]="selectedPlayerClass" name="set">
             <mat-option *ngFor="let playerClass of playerClassList" [value]="playerClass.value">
               {{playerClass.name}}
@@ -17,7 +20,8 @@
     </fieldset>
 </div>
 <div class="col-md-8">
-    <fieldset>
+    <fieldset class="set-selection">
+      <h3>Card Set</h3>
         <mat-select [(ngModel)]="selectedSet" name="set">
             <mat-option *ngFor="let set of setList" [value]="set.value">
               {{set.name}}
@@ -26,4 +30,7 @@
     </fieldset>
 </div>
 
-<button mat-button  (click) = "onSubmit()">Filter</button>
+<div class="buttons">
+  <button mat-button  (click) = "onSubmit()">Filter</button>
+</div>
+</body>
