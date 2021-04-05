@@ -1,1 +1,63 @@
 <p>filter works!</p>
+<div class="col-md-8">
+    <fieldset>
+        <h3>Mana Cost</h3>
+        <select class="form-control" name="manaCost">
+            <option value="">All Mana Cost</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7+</option>
+        </select>
+    </fieldset>
+</div>
+<div class="col-md-8">
+    <fieldset>
+        <h3>Format</h3>
+        <select class="form-control" name="format">
+            <option value="wild">Wild</option>
+            <option value="standard">Standard</option>					
+        </select>
+    </fieldset>
+</div>
+<div class="col-md-8">
+    <fieldset>
+        <h3>Class</h3>
+        <select class="form-control" name="class">
+            <option value="">All Classes</option>
+            <option value="1950">Demon Hunter</option>
+            <option value="18">Druid</option>
+            <option value="22">Hunter</option>
+            <option value="37">Mage</option>
+            <option value="46">Neutral</option>
+            <option value="47">Paladin</option>
+            <option value="50">Priest</option>
+            <option value="54">Rogue</option>
+            <option value="61">Shaman</option>
+            <option value="73">Warlock</option>
+            <option value="74">Warrior</option>
+        </select>
+    </fieldset>
+</div>
+<div class="col-md-8">
+    <fieldset>
+        <h3>Set</h3>
+                            <select class="form-control" name="set">
+            <option value="">All Sets</option>
+            <option value="80">Basic</option>
+            <option value="86">Classic</option>
+            <option value="506">Blackrock Mountain</option>
+            <option value="337">Curse of Naxxramas</option>
+            <option value="414">Goblins vs. Gnomes</option>
+            <option value="1002">Journey to Un'Goro</option>
+            <option value="1099">Knights of the Frozen Throne</option>
+            <option value="1240">Kobolds &amp; Catacombs</option>
+            <option value="935">Mean Streets of Gadgetzan</option><option value="870">One Night in Karazhan</option><option value="1525">Rastakhan's Rumble</option><option value="1694">Rise of Shadows</option><option value="1784">Saviors of Uldum</option><option value="1875">Descent of Dragons</option><option value="1951">Ashes of Outland</option><option value="2024">Scholomance Academy</option><option value="2073">Madness at the Darkmoon Faire</option><option value="1427">The Boomsday Project</option><option value="604">The Grand Tournament</option><option value="675">The League of Explorers</option><option value="1298">The Witchwood</option><option value="719">Whispers of the Old Gods</option>					</select>
+    </fieldset>
+</div>
+<input type="submit" class="btn btn-dark btn-dark-tiny-wide sort-btn-filter" value="Filter">
+<button routerLink="../card-list/card-list.component" class="btn">Nouvelle page</button>
